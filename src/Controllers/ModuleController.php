@@ -29,7 +29,7 @@ class ModuleController extends Controller
         $title = 'Module Manager';
 
         $positions = new Collection;
-        \Event::fire('website.template.positions', [$positions]);
+        \Event::dispatch('website.template.positions', [$positions]);
         $active_template_positions = [];
 
         if(!empty($positions[$this->themeHelper->active_template_name])){
